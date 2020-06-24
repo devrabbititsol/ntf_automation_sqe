@@ -17,22 +17,22 @@ public static final String apiName1 = "Detect Shipping Carrier";
 
  public static String urlParams1  = "[]";
 
- public static String headers1  = "[{\"header_id\":1189,"
+ public static String headers1  = "[{\"header_id\":1229,"
  + "\"header_value\":\"$#SESSIONID#$\","
  + "\"dataset_id\":1654,"
  + "\"header_key\":\"sessionId\","
  + "\"header_desc\":\"\"},"
- + "{\"header_id\":1190,"
+ + "{\"header_id\":1230,"
  + "\"header_value\":\"$#UESRID#$\","
  + "\"dataset_id\":1654,"
  + "\"header_key\":\"userId\","
  + "\"header_desc\":\"\"},"
- + "{\"header_id\":1191,"
+ + "{\"header_id\":1231,"
  + "\"header_value\":\"$#ACCOUNTID#$\","
  + "\"dataset_id\":1654,"
  + "\"header_key\":\"accountId\","
  + "\"header_desc\":\"\"},"
- + "{\"header_id\":1192,"
+ + "{\"header_id\":1232,"
  + "\"header_value\":\"Bearer $#AUTHENTICATIONTOKEN#$\","
  + "\"dataset_id\":1654,"
  + "\"header_key\":\"authenticationToken\","
@@ -47,8 +47,8 @@ public static final String authenticationData1 = "{\"authtype\":\"noauth\","
  + "\"bearertoken\":{\"token\":\"\"}}";
 
 
- public static String body1  = "{\"raw_text\":\"{\\n\\t\\\"trackingNumber\\\": \\\"1234567-89012345\\\"\\n}\","
- + "\"raw_id\":1325,"
+ public static String body1  = "{\"raw_text\":\"{\\n\\t\\\"trackingNumber\\\": \\\"123456789045544\\\"\\n}\","
+ + "\"raw_id\":1335,"
  + "\"dataset_id\":1654,"
  + "\"raw_type_id\":3}";
 
