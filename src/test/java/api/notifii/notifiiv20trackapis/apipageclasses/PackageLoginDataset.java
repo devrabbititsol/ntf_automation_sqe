@@ -17,23 +17,23 @@ public static final String apiName1 = "Package Login";
 
  public static String urlParams1  = "[]";
 
- public static String headers1  = "[{\"header_id\":1213,"
+ public static String headers1  = "[{\"header_id\":1221,"
  + "\"header_value\":\"$#ACCOUNTID#$\","
  + "\"dataset_id\":1658,"
  + "\"header_key\":\"accountId\","
  + "\"header_desc\":\"\"},"
- + "{\"header_id\":1214,"
+ + "{\"header_id\":1222,"
  + "\"header_value\":\"Bearer $#AUTHENTICATIONTOKEN#$\","
  + "\"dataset_id\":1658,"
  + "\"header_key\":\"authenticationToken\","
  + "\"header_desc\":\"\"},"
- + "{\"header_id\":1215,"
+ + "{\"header_id\":1223,"
  + "\"header_value\":\"$#SESSIONID#$\","
  + "\"dataset_id\":1658,"
  + "\"header_key\":\"sessionId\","
  + "\"header_desc\":\"\"},"
- + "{\"header_id\":1216,"
- + "\"header_value\":\"$#UESRID#$\","
+ + "{\"header_id\":1224,"
+ + "\"header_value\":\"$#USERID#$\","
  + "\"dataset_id\":1658,"
  + "\"header_key\":\"userId\","
  + "\"header_desc\":\"\"}]";
@@ -64,7 +64,7 @@ public static final String authenticationData1 = "{\"authtype\":\"noauth\","
  + "\\n\\t\\\"shelf\\\": \\\"\\\","
  + "\\n\\t\\\"tagNumber\\\": 1,"
  + "\\n\\t\\\"ocrTriggered\\\": 1\\n}\","
- + "\"raw_id\":1331,"
+ + "\"raw_id\":1333,"
  + "\"dataset_id\":1658,"
  + "\"raw_type_id\":3}";
 
