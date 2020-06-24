@@ -22,22 +22,22 @@ public static final String apiName1 = "Login API";
 
  public static String linkParams1  = "[{\"dataset_id\":1628,"
  + "\"description\":\"\","
- + "\"id\":47,"
+ + "\"id\":59,"
  + "\"value\":\"user_id\","
  + "\"key\":\"USERID\"},"
  + "{\"dataset_id\":1628,"
  + "\"description\":\"\","
- + "\"id\":48,"
+ + "\"id\":60,"
  + "\"value\":\"account_id\","
  + "\"key\":\"ACCOUNTID\"},"
  + "{\"dataset_id\":1628,"
  + "\"description\":\"\","
- + "\"id\":49,"
+ + "\"id\":61,"
  + "\"value\":\"session_id\","
  + "\"key\":\"SESSIONID\"},"
  + "{\"dataset_id\":1628,"
  + "\"description\":\"\","
- + "\"id\":50,"
+ + "\"id\":62,"
  + "\"value\":\"authentication_token\","
  + "\"key\":\"AUTHENTICATIONTOKEN\"}]";
 
@@ -52,8 +52,8 @@ public static final String authenticationData1 = "{\"authtype\":\"noauth\","
 
  public static String body1  = "{\"raw_text\":\"{\\n\\t\\\"username\\\":\\\"drhacc1\\\","
  + "\\n\\t\\\"password\\\":\\\"drhacc1\\\","
- + "\\n\\t\\\"session_timedout\\\":\\\"1d\\\"\\n}\","
- + "\"raw_id\":1300,"
+ + "\\n\\t\\\"session_timedout\\\":\\\"7d\\\"\\n}\","
+ + "\"raw_id\":1336,"
  + "\"dataset_id\":1628,"
  + "\"raw_type_id\":3}";
 
