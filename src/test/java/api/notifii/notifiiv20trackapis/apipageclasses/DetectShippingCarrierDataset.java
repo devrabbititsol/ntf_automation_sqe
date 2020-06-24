@@ -17,22 +17,22 @@ public static final String apiName1 = "Detect Shipping Carrier";
 
  public static String urlParams1  = "[]";
 
- public static String headers1  = "[{\"header_id\":1229,"
+ public static String headers1  = "[{\"header_id\":1321,"
  + "\"header_value\":\"$#SESSIONID#$\","
  + "\"dataset_id\":1654,"
  + "\"header_key\":\"sessionId\","
  + "\"header_desc\":\"\"},"
- + "{\"header_id\":1230,"
- + "\"header_value\":\"$#UESRID#$\","
+ + "{\"header_id\":1322,"
+ + "\"header_value\":\"$#USERID#$\","
  + "\"dataset_id\":1654,"
  + "\"header_key\":\"userId\","
  + "\"header_desc\":\"\"},"
- + "{\"header_id\":1231,"
+ + "{\"header_id\":1323,"
  + "\"header_value\":\"$#ACCOUNTID#$\","
  + "\"dataset_id\":1654,"
  + "\"header_key\":\"accountId\","
  + "\"header_desc\":\"\"},"
- + "{\"header_id\":1232,"
+ + "{\"header_id\":1324,"
  + "\"header_value\":\"Bearer $#AUTHENTICATIONTOKEN#$\","
  + "\"dataset_id\":1654,"
  + "\"header_key\":\"authenticationToken\","
@@ -48,7 +48,7 @@ public static final String authenticationData1 = "{\"authtype\":\"noauth\","
 
 
  public static String body1  = "{\"raw_text\":\"{\\n\\t\\\"trackingNumber\\\": \\\"123456789045544\\\"\\n}\","
- + "\"raw_id\":1335,"
+ + "\"raw_id\":1359,"
  + "\"dataset_id\":1654,"
  + "\"raw_type_id\":3}";
 
