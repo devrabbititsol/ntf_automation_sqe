@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Main Test Suite" parallel="tests">
+	<test name="nulltest">
+  	<parameter name="browser" value="null"/>
+		<classes>			<class name="api.notifii.notifiiv20apis.useraccount.apitestclasses.TC_LoginAPI" />			<class name="api.notifii.notifiiv20apis.track.apitestclasses.TC_AddMailRoom" />			<class name="api.notifii.notifiiv20apis.track.apitestclasses.TC_GetMailRoomsByAccountID" />			<class name="api.notifii.notifiiv20apis.track.apitestclasses.TC_UpdateMailRoom" />
+			<class name="com.fileupload.ReportUpload" />
+		</classes>
+	</test>
+</suite>

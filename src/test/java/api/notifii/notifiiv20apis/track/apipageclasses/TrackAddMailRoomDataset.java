@@ -17,22 +17,22 @@ public static final String apiName1 = "Track Add mail room";
 
  public static String urlParams1  = "[]";
 
- public static String headers1  = "[{\"header_id\":1434,"
+ public static String headers1  = "[{\"header_id\":1493,"
  + "\"header_value\":\"$#USERID#$\","
  + "\"dataset_id\":1647,"
  + "\"header_key\":\"userId\","
  + "\"header_desc\":\"\"},"
- + "{\"header_id\":1436,"
+ + "{\"header_id\":1494,"
  + "\"header_value\":\"Bearer $#AUTHENTICATIONTOKEN#$\","
  + "\"dataset_id\":1647,"
  + "\"header_key\":\"authenticationToken\","
  + "\"header_desc\":\"\"},"
- + "{\"header_id\":1433,"
+ + "{\"header_id\":1495,"
  + "\"header_value\":\"$#ACCOUNTID#$\","
  + "\"dataset_id\":1647,"
  + "\"header_key\":\"accountId\","
  + "\"header_desc\":\"\"},"
- + "{\"header_id\":1435,"
+ + "{\"header_id\":1496,"
  + "\"header_value\":\"$#SESSIONID#$\","
  + "\"dataset_id\":1647,"
  + "\"header_key\":\"sessionId\","
@@ -47,8 +47,8 @@ public static final String authenticationData1 = "{\"authtype\":\"noauth\","
  + "\"bearertoken\":{\"token\":\"\"}}";
 
 
- public static String body1  = "{\"raw_text\":\"{\\n\\t\\\"location\\\":\\\"New Mailroom 2\\\"\\n}\","
- + "\"raw_id\":1399,"
+ public static String body1  = "{\"raw_text\":\"{\\n\\t\\\"location\\\":\\\"Mail Room 2\\\"\\n}\","
+ + "\"raw_id\":1414,"
  + "\"dataset_id\":1647,"
  + "\"raw_type_id\":3}";
 
