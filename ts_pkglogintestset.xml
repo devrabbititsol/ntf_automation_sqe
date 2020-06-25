@@ -3,7 +3,7 @@
 <suite name="Main Test Suite" parallel="tests">
 	<test name="nulltest">
   	<parameter name="browser" value="null"/>
-		<classes>			<class name="api.notifii.notifiiv20trackapis.apitestclasses.TC_LoginAPI" />			<class name="api.notifii.notifiiv20trackapis.apitestclasses.TC_PackageLogIN" />
+		<classes>			<class name="api.notifii.notifiiv20apis.useraccount.apitestclasses.TC_LoginAPI" />			<class name="api.notifii.notifiiv20apis.track.apitestclasses.TC_PackageLogIN" />
 			<class name="com.fileupload.ReportUpload" />
 		</classes>
 	</test>
