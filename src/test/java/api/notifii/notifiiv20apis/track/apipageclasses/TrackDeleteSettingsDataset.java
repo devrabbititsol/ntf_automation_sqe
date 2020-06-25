@@ -17,25 +17,25 @@ public static final String apiName1 = "Track Delete Settings";
 
  public static String urlParams1  = "[]";
 
- public static String headers1  = "[{\"header_id\":1410,"
- + "\"header_value\":\"$#SESSIONID#$\","
- + "\"dataset_id\":1638,"
- + "\"header_key\":\"sessionId\","
- + "\"header_desc\":\"\"},"
- + "{\"header_id\":1412,"
+ public static String headers1  = "[{\"header_id\":1418,"
  + "\"header_value\":\"Bearer $#AUTHENTICATIONTOKEN#$\","
  + "\"dataset_id\":1638,"
  + "\"header_key\":\"authenticationToken\","
  + "\"header_desc\":\"\"},"
- + "{\"header_id\":1409,"
- + "\"header_value\":\"$#ACCOUNTID#$\","
- + "\"dataset_id\":1638,"
- + "\"header_key\":\"accountId\","
- + "\"header_desc\":\"\"},"
- + "{\"header_id\":1411,"
+ + "{\"header_id\":1420,"
  + "\"header_value\":\"$#USERID#$\","
  + "\"dataset_id\":1638,"
  + "\"header_key\":\"userId\","
+ + "\"header_desc\":\"\"},"
+ + "{\"header_id\":1417,"
+ + "\"header_value\":\"$#SESSIONID#$\","
+ + "\"dataset_id\":1638,"
+ + "\"header_key\":\"sessionId\","
+ + "\"header_desc\":\"\"},"
+ + "{\"header_id\":1419,"
+ + "\"header_value\":\"$#ACCOUNTID#$\","
+ + "\"dataset_id\":1638,"
+ + "\"header_key\":\"accountId\","
  + "\"header_desc\":\"\"}]";
 
 public static final String authenticationData1 = "{\"authtype\":\"noauth\","
@@ -49,7 +49,7 @@ public static final String authenticationData1 = "{\"authtype\":\"noauth\","
 
  public static String body1  = "{\"raw_text\":\"{\\n\\t\\\"moduleType\\\":\\\"trackShippingCarriers\\\","
  + "\\n\\t\\\"referenceId\\\":\\\"20417\\\"\\n}\","
- + "\"raw_id\":1396,"
+ + "\"raw_id\":1397,"
  + "\"dataset_id\":1638,"
  + "\"raw_type_id\":3}";
 
