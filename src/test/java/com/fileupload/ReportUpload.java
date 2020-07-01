@@ -54,7 +54,7 @@ public class ReportUpload extends BaseClass {
 			String client_timezoneId = primaryInfoObj.optString("client_timezone_id");
 			String report_upload_url = primaryInfoObj.optString("report_upload_url");
 			String testcaseId = primaryInfoObj.optString("testcase_id");
-			String datasetId = primaryInfoObj.optString("testcase_id");
+			//String datasetId = primaryInfoObj.optString("testcase_id");
 			String subModuleId = primaryInfoObj.isNull("sub_module_id") ? null : primaryInfoObj.optString("sub_module_id");
 			String testsetId = primaryInfoObj.optString("testset_id").equals("0") ? "" : primaryInfoObj.optString("testset_id");
 			String testsetName = (primaryInfoObj.optString("testset_name") == null || primaryInfoObj.optString("testset_name").equals("null") || primaryInfoObj.optString("testset_name").isEmpty()) ? "" : primaryInfoObj.optString("testset_name");
@@ -103,7 +103,8 @@ public class ReportUpload extends BaseClass {
 			
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println(e.getLocalizedMessage());
+			//e.printStackTrace();
 		}
 	}
 	

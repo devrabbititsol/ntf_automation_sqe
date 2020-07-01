@@ -7,6 +7,8 @@ import com.utilities.ReportPortalBaseClass;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
+
+import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,7 +26,7 @@ public class APIService extends ReportPortalBaseClass {
 
 	@SuppressWarnings({ "unused", "static-access" })
 	public static String callRequest(ConfigFilesUtility con, String apiName, String urlParams, String headers, int requestType, int bodyType, String inputBody,
-			String datatsetHeader, String dataResources, String authenticationData,String formurlEncodedData,String formData,String savedParameters, Logger logger) {
+			String datatsetHeader, String dataResources, String authenticationData,String formurlEncodedData,String formData,String savedParameters, String statusParameters, Logger logger) {
 		onlyReportPortalForDistingushApi();
 		configFileObj= new ConfigFilesUtility();
 		
@@ -118,7 +120,7 @@ public class APIService extends ReportPortalBaseClass {
 
 			if (headersJsonArray.length() > 0) {
 				extentReportLog( "Headers");
-				logger.info("Headers :  " + headersJsonArray.toString());
+				logger.info("Headers :  " + StringEscapeUtils.unescapeJava(headersJsonArray.toString()));
 			} 
 			
 			for (int i = 0; i < headersJsonArray.length(); i++) {
@@ -135,7 +137,7 @@ public class APIService extends ReportPortalBaseClass {
 			
 			if (parameters.length() > 0) {
 				extentReportLog( "Input Parameters");
-				logger.info("Parameters :  " + parameters.toString());
+				logger.info("Parameters :  " + StringEscapeUtils.unescapeJava(parameters.toString()));
 			} 
 				
 			for (int i = 0; i < parameters.length(); i++) {
@@ -154,12 +156,13 @@ public class APIService extends ReportPortalBaseClass {
 					requestSpec.param(key, value);
 				}
 			}
+			//reportCreation("info",getFinalData(body.toString()));
 			
 			if (body.length() > 0) {
 				extentReportLog( "Input Body");
-				reportCreation("info", "body  :  " + body.toString());
+				reportCreation("info", "body  :  " + body.optString("raw_text"));
 				//test.log(LogStatus.INFO, "body  :  " + body.toString());
-				logger.info("body :  " + body.toString());
+				logger.info("body :  " + StringEscapeUtils.unescapeJava(body.toString()));
 			}
 			
 			Response response = null;
@@ -190,6 +193,7 @@ public class APIService extends ReportPortalBaseClass {
 					}
 				} else if (bodyType == 3) { // raw data
 					rawBody = getFinalData(body.optString("raw_text"));
+					logger.info("raw body :  " + StringEscapeUtils.unescapeJava(rawBody));
 				}
 
 				
@@ -221,9 +225,16 @@ public class APIService extends ReportPortalBaseClass {
 				 * "Correct status code returned");
 				 */
 				if (statusCode == 200 || statusCode == 201) {
-					MyApp.data(projectName, responseString, savedParameters);
-					reportCreation("pass", testCaseName + " API status code is : " + statusCode);
-					reportCreation("pass", "Response: " + responseString);
+					MyApp.data(projectName, responseString, savedParameters, "[]");
+					reportCreation("info", testCaseName + " API status code is : " + statusCode);
+					String validatedResponse = MyApp.data(projectName, responseString, "[]", statusParameters );
+					if(validatedResponse.isEmpty()) {
+						reportCreation("pass", "Response: " + responseString);
+					} else {
+						reportCreation("fail", "Response: " + responseString);
+						reportCreation("fail",  validatedResponse);
+					}
+					//reportCreation("pass", "Response: " + responseString);
 					//test.log(LogStatus.PASS, testCaseName + " API status code is : " + statusCode);
 					logger.info(testCaseName + " API status code is :" + statusCode + " : " + responseString);
 					System.out.println(responseString);
@@ -243,44 +254,27 @@ public class APIService extends ReportPortalBaseClass {
 				} else {
 					
 					logger.info("Invalid response body" + responseString);
-					if(contentType.equalsIgnoreCase("application/xml")) {
-						reportCreation("fail", "Invalid response body" + responseString);
-						//test.log(LogStatus.FAIL, "Invalid response body" + responseString);
-					}else if (isJSONValid(responseString)) {
-						reportCreation("fail", "Invalid response body" + responseString);
-						//test.log(LogStatus.FAIL, "Invalid response body" + responseString);
-					}  else {
-						reportCreation("fail", "Response is in HTML content please check the logger file");
-						//test.log(LogStatus.FAIL, "Response is in HTML content please check the logger file");
-					}
+					reportCreation("fail", "Invalid response body" + responseString);
 				}
 				System.out.println(responseString);
 			}
 			
 		} catch (Exception e) {
-			extentReportLog( "Output");
+			//extentReportLog( "Output");
 			String exception = e.getClass().getSimpleName() + "-" + e.getLocalizedMessage();
 			reportCreation("fail", "Invalid response : " + exception);
-			//test.log(LogStatus.FAIL, "Invalid response : " + exception);
-			//logger.info("Invalid response body returned as :  " + exception);
-			//e.printStackTrace();
+			
 		}
-		//ExtentConfigurations.failedDataSets = ExtentConfigurations.failedDataSets + 1;
-		//Constants.testName = Constants.testName + " - FAIL $";
 		return "";
 
 	}
 	
 	public static void extentReportLog(String data) {
-		reportCreation("info", data);
-		//if(LOGGER != null) LOGGER.info(data);
-		//test.log(LogStatus.INFO, "<b style = 'background-color: #ffffff; color : #1976D2 ; font-size : 15px' >"+ data + "</b>");
+		reportCreation("info", StringEscapeUtils.unescapeJava(data));
 	}
 	
 	public static void extentHeaderLog(String data) {
-		reportCreation("info", data);
-		//if(LOGGER != null) LOGGER.info(data);
-		//test.log(LogStatus.INFO, "<b style = 'background-color: #ffffff; color : #ff8f00 ; font-size : 18px' >"+ data + "</b>");
+		reportCreation("info", StringEscapeUtils.unescapeJava(data));
 	}
 
 	
@@ -326,11 +320,10 @@ public class APIService extends ReportPortalBaseClass {
 	public static void reportCreation(String result, String data) {
 		JSONObject jsonObject = new JSONObject();
 		jsonObject.put("result_type", result);
-		jsonObject.put("text", data);
+		jsonObject.put("text", StringEscapeUtils.unescapeJava(data));
 		if(result.equalsIgnoreCase("fail")) {
-			if(LOGGER != null) LOGGER.error(data);
-		} else
-		if(LOGGER != null) LOGGER.info(data);
+			if(LOGGER != null) LOGGER.error(StringEscapeUtils.unescapeJava(data));
+		} else if(LOGGER != null) LOGGER.info(StringEscapeUtils.unescapeJava(data));
 		jsonArray.put(jsonObject);
 	}
 

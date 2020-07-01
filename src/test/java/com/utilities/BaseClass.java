@@ -69,6 +69,7 @@ public class BaseClass extends ReportPortalBaseClass {
 	public String formurlEncodedData = "";
 	public String formData = "";
 	public String linkParams = "[]";
+	public String statusParams = "[]";
 	//public static final org.apache.logging.log4j.Logger LOGGER = LogManager.getLogger(BaseClass.class);
 
 	// Explicit wait method

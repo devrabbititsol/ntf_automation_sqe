@@ -31,6 +31,7 @@ public class TC_LoginAPI extends BaseClass {
 				String urlParams = (String) c.getField("urlParams" + i).get(object);
 				if(urlParams == null) return;
 				String linkParams = (String) c.getField("linkParams" + i).get(object);
+				String statusParams = (String) c.getField("statusParams" + i).get(object);
 				String headers = (String) c.getField("headers" + i).get(object);
 				String body = (String) c.getField("body" + i).get(object);
 				String authenticationData = (String) c.getField("authenticationData" + i).get(object);
@@ -38,7 +39,7 @@ public class TC_LoginAPI extends BaseClass {
 				String datasetResources = (String) c.getField("datasetResources" + i).get(object);
 				int reqType = (Integer) c.getField("requestType" + i).get(object);
 				int bodyType = (Integer) c.getField("bodyType" + i).get(object);
-				String response = APIService.callRequest(configFileObj,apiName, urlParams, headers, reqType, bodyType, body, configFileObj.getProperty("dataset" +i), datasetResources, authenticationData, formurlEncodedData, formData, linkParams, logger);
+				String response = APIService.callRequest(configFileObj,apiName, urlParams, headers, reqType, bodyType, body, configFileObj.getProperty("dataset" +i), datasetResources, authenticationData, formurlEncodedData, formData, linkParams,statusParams, logger);
 			}
 		}
 	}}
